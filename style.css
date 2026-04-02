@@ -1,35 +1,64 @@
-/* Mobile mặc định */
-div {
-    width: 100%;
-    margin: 10px 0;
-    box-sizing: border-box;
+/* ===== MOBILE FIRST ===== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
 }
 
-/* ================= */
-/* Tablet ≥ 772px */
-/* ================= */
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 10px;
+}
+
+.container div {
+    border: 2px solid #ccc;
+    padding: 10px;
+}
+
+img {
+    width: 100%;
+}
+
+/* ===== TABLET ≥ 772px ===== */
 @media (min-width: 772px) {
-
-    body {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
-
-    div {
-        width: 45%;
+    .container {
+        grid-template-columns: 1fr 1fr;
     }
 
     img {
-        max-height: 30vh;
+        border-radius: 50%;
+    }
+
+    .container div:last-child {
+        grid-column: span 2;
     }
 }
 
-/* ================= */
-/* Desktop ≥ 998px */
-/* ================= */
-@media (min-width: 998px) {
-    div {
-        width: 30%;
+/* ===== DESKTOP ≥ 992px ===== */
+@media (min-width: 992px) {
+    .container div:nth-child(3n) {
+        grid-column: span 2;
+    }
+
+    img {
+        border-radius: 0;
+    }
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* ===== DARK MODE ===== */
+@media (prefers-color-scheme: dark) {
+    .container div {
+        background-color: #222;
+        color: yellow;
+        border: 2px solid black;
     }
 }
