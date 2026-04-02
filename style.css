@@ -1,0 +1,44 @@
+/* Reset cơ bản */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+    text-align: center;
+}
+
+/* Mobile mặc định (1 cột) */
+div {
+    width: 100%;
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+
+/* Ảnh */
+img {
+    width: 100%;
+}
+
+/* ========================= */
+/* Tablet ≥ 772px (2 cột) */
+/* ========================= */
+@media (min-width: 772px) {
+    div {
+        width: 45%;
+        display: inline-block;
+        margin: 10px;
+        vertical-align: top;
+    }
+
+    img {
+        max-height: 30vh;
+    }
+}
+
+/* ========================= */
+/* Desktop ≥ 998px (3 cột) */
+/* ========================= */
+@media (min-width: 998px) {
+    div {
+        width: 30%;
+    }
+}
